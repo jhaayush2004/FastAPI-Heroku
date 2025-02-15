@@ -8,6 +8,10 @@ from pathlib import Path
 
 app = FastAPI()
 
+@app.get("/")
+def home():
+    return {"message": "Welcome to the Diabetes Prediction API! Use /docs for Swagger UI."}
+    
 # CORS Middleware (Allow all origins)
 app.add_middleware(
     CORSMiddleware,
